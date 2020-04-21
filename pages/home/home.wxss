@@ -15,7 +15,7 @@
     background:#EEF7F6;
     border-radius: 8rpx;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);
-    height: 473rpx;
+    height: 440rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,8 +56,8 @@
     }
   .todoList .item .select {
      border-radius: 50%;
-     width: 28rpx;
-     height: 28rpx;
+     width: 26rpx;
+     height: 26rpx;
      border: 4rpx solid #FE996F;
      margin-right: 30rpx;
      position: relative;

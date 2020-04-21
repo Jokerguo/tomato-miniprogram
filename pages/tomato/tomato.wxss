@@ -1,0 +1,13 @@
+/* pages/tomato/tomato.wxss */
+
+.container{
+  height: 100vh;
+}
+
+.clock{
+  margin-bottom: 160rpx;
+}
+
+.stop{
+  margin-bottom: 40rpx;
+}

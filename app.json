@@ -1,7 +1,8 @@
 {
   "pages":[
+    "pages/tomato/tomato",
     "pages/home/home",
-    "pages/test/test"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,12 +21,12 @@
       "iconPath": "/images/home.png",
       "selectedIconPath" : "/images/home-active.png"
       }, {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/tomato/tomato",
         "text": "数据统计",
         "iconPath": "/images/total.png",
         "selectedIconPath" : "/images/total-active.png"
       }, {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/index/index",
         "text": "我的",
         "iconPath": "/images/me.png",
         "selectedIconPath" : "/images/me-active.png"

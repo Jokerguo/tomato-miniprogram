@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/test/test"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "番茄闹钟",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#515151",
+    "selectedColor": "#f6705a",
+    "backgroundColor": "#fff",
+    "navigationBarTextStyle":"black",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "主页",
+      "iconPath": "/images/home.png",
+      "selectedIconPath" : "/images/home-active.png"
+      }, {
+        "pagePath": "pages/test/test",
+        "text": "数据统计",
+        "iconPath": "/images/total.png",
+        "selectedIconPath" : "/images/total-active.png"
+      }, {
+        "pagePath": "pages/test/test",
+        "text": "我的",
+        "iconPath": "/images/me.png",
+        "selectedIconPath" : "/images/me-active.png"
+      }]
+  }
+}

@@ -1,66 +1,22 @@
 // pages/me/me.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    tab : "tomato",
+    lists : {
+      "本周四" : [
+        {id :1, text : '我干了什么啊', time : "14:00"},
+        {id :2, text : '嘿嘿', time : "15:00"}
+      ],
+      "本周五" : [
+        {id :3, text : '震惊', time : "14:00"}
+      ],
+      "本周六" : [
+        {id :4, text : '啥也不是，不要问我', time : "15:00"}
+      ]
+    },
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  changeTab(event){
+    this.setData({tab : event.currentTarget.dataset.name})
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

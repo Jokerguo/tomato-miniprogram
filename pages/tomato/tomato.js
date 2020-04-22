@@ -1,7 +1,7 @@
 // pages/tomato/tomato.js
 Page({
   data: {
-    defaultSecond : 5,
+    defaultSecond : 10,
     time : undefined,
     timer : null,
     status : "stop",
@@ -24,13 +24,14 @@ Page({
     return `${m}:${s}`
   },
   startTimer(){
+    if(this.data.defaultSecond === 0){return}
     this.setData({status: 'stop'})
     this.data.timer = setInterval(() => {
       this.data.defaultSecond --
       this.setData({time : this.getTime()})
       if(this.data.defaultSecond === 0){
-       this.stopTimer()
-       this.setData({againButton: true})
+        this.stopTimer()
+        this.setData({againButton: true})
       }
     }, 1000);
   },
@@ -38,16 +39,26 @@ Page({
     this.setData({status: 'start'})
     clearInterval(this.data.timer)
   },
+  againTimer(){
+    this.setData({defaultSecond : 10})
+    this.startTimer()
+    this.setData({againButton: false})
+  },
   onShow(){   //钩子
     this.startTimer()
   },
   showConfirm(){
     this.setData({ visibleConfirm : true})
+    this.stopTimer()
   },
   confirmAbandon(){
-    this.cancel()
-  },
-  cancel(){
     this.setData({ visibleConfirm : false})
+    wx.navigateBack({
+      to : -1
+    })
+  },
+  cancelAbandon(){
+    this.setData({ visibleConfirm : false})
+    this.startTimer()
   }
 })

@@ -1,33 +1,37 @@
 {
-  "pages":[
-    "pages/binding/binding",
+  "pages": [
     "pages/login/login",
+    "pages/binding/binding",
     "pages/me/me",
     "pages/home/home",
     "pages/tomato/tomato",
     "pages/index/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "番茄闹钟",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#515151",
     "selectedColor": "#f6705a",
     "backgroundColor": "#fff",
-    "navigationBarTextStyle":"black",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "主页",
-      "iconPath": "/images/home.png",
-      "selectedIconPath" : "/images/home-active.png"
-      }, {
-        "pagePath": "pages/index/index",
+    "navigationBarTextStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
         "text": "我的",
         "iconPath": "/images/me.png",
-        "selectedIconPath" : "/images/me-active.png"
-      }]
-  }
+        "selectedIconPath": "/images/me-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap16.json"
 }

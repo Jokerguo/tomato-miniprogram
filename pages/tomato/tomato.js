@@ -1,7 +1,7 @@
 // pages/tomato/tomato.js
 Page({
   data: {
-    defaultSecond : 10,
+    defaultSecond : 1500,
     time : undefined,
     timer : null,
     status : "stop",
@@ -40,7 +40,7 @@ Page({
     clearInterval(this.data.timer)
   },
   againTimer(){
-    this.setData({defaultSecond : 10})
+    this.setData({defaultSecond : 1500})
     this.startTimer()
     this.setData({againButton: false})
   },

@@ -5,7 +5,6 @@
       data-id="{{item.id}}"  data-index="{{index}}"></view>
       <text data-id="{{item.id}}"  data-index="{{index}}" data-content="{{item.description}}" bindtap="updatedText" >{{item.description}}</text>
     </view>
-    {{'xixix'+ lists[1].description}}
   </scroll-view>
   <g-button class="createButton"  text="创建任务" type='change' bindtap="showConfirm">创建任务</g-button>
   <view class="tomato-wrapper">

@@ -22,8 +22,9 @@ Page({
     })
       .then(response =>{
         this.data.lists[this.updatedIndex] =  [response.response.data.resource]
-          this.setData({lists: this.data.lists})
+        this.setData({lists : this.data.lists})
         this.hideUpdatedConfirm()
+        this.onShow()
       })
   },
   hideUpdatedConfirm(){

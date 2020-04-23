@@ -1,8 +1,8 @@
 <view class="home-container">
   <scroll-view class="todoList" scroll-y="true">
     <view class="item" wx:for="{{lists}}" wx:key="id" data-index="{{index}}" bindtap="destoryTodo">
-      <view class="select {{item.finished && 'active'}}"></view>
-      <text>{{item.text}}</text>
+      <view class="select {{item.complted && 'active'}}"></view>
+      <text>{{item.description}}</text>
     </view>
   </scroll-view>
   <g-button class="createButton"  text="创建任务" type='change' bindtap="showConfirm">创建任务</g-button>

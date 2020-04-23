@@ -1,13 +1,8 @@
+const {http} = require('../../util/http')
 // pages/home/home.js
 Page({
   data: {
-    lists:[
-      {id: 1, text : "我完成了这个", finished: true},
-      {id: 2, text : "我在写测试", finished: true},
-      {id: 3, text : "嘻嘻嘻", finished: false},
-      {id: 4, text : "哈哈哈", finished: false},
-      {id: 5, text : "你好啊", finished: false},
-    ],
+    lists:[],
     visibleConfirm : false
   },
   showConfirm(){
@@ -15,13 +10,17 @@ Page({
   },
   confirm(event){
     let content = event.detail
-    console.log(event)
     if(content){
-      console.log(2)
-      let todo = [{id: 6, text : content, finished: false}]
-      this.data.lists = todo.concat(this.data.lists)
-      this.setData({lists : this.data.lists})
-      this.hideConfirm()
+      http.post('/todos',{
+        description: content
+      })
+        .then(response =>{
+          console.log(response.response.data.resource)
+          let todo = [response.response.data.resource]
+          this.data.lists = todo.concat(this.data.lists)
+          this.setData({lists : this.data.lists})
+          this.hideConfirm()
+        })
     }
   },
   destoryTodo(event){
@@ -33,5 +32,11 @@ Page({
   hideConfirm(){
     this.setData({visibleConfirm : false})
   },
-  
+
+  onShow(){
+    http.get('/todos')
+      .then(response=>{
+        this.setData({lists : response.response.data.resources})
+      })
+  }
 })

@@ -69,6 +69,7 @@ Page({
     this.startTimer()
     http.post('/tomatoes')
       .then(response =>{
+        console.log(response)
         this.setData({tomato : response.response.data.resource})
       })
   },

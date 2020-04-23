@@ -5,7 +5,7 @@
     </view>
     <view class="details">
       <open-data type='userNickName' class="name"></open-data>
-      <navigator url="/pages/binding/binding">绑定pc账号</navigator>
+      <navigator url="/pages/binding/binding" wx:if="{{!me.account}}">绑定pc账号</navigator>
     </view>
     <button open-type="contact" class="qr">问题反馈</button>
     <!-- <view class="qr">问题反馈</view> -->
@@ -35,7 +35,8 @@
     <view class="item" wx:for="{{todos}}" wx:for-index="key" wx:key="index">
       <wxs src="../../util/formattor.wxs" module="formattor"></wxs>
       <view class="time">{{formattor.monthFormat(key)}}</view>
-      <view class="content" wx:for="{{todos[key]}}" wx:for-index="index" wx:key="index">
+      <view class="content" wx:for="{{todos[key]}}" wx:for-index="index" wx:key="index"
+      wx:if="{{item.completed}}">
         <text>{{formattor.dateFormat(item.created_at,"hh:mm")}}</text>
         <view class="detail">{{item.description}}</view>
       </view>

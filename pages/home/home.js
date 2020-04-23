@@ -1,10 +1,36 @@
 const {http} = require('../../util/http')
 // pages/home/home.js
 Page({
+  updatedId : '',
+  updatedIndex : '',
   data: {
     lists:[],
-    visibleConfirm : false
+    visibleConfirm : false,
+    visibleUpdatedConfirm : false,
+    updatedContent : "",
   },
+  updatedText(event){
+     let {id,index,content} = event.currentTarget.dataset
+     this.updatedId = id
+     this.updatedIndex = index
+    this.setData({visibleUpdatedConfirm : true,updatedContent : content})
+  },
+  updatedConfirm(event){
+    let content = event.detail
+    http.put(`/todos/${this.updatedId}`,{
+      description : content
+    })
+      .then(response =>{
+        this.data.lists[this.updatedIndex] =  [response.response.data.resource]
+          this.setData({lists: this.data.lists})
+        this.hideUpdatedConfirm()
+      })
+  },
+  hideUpdatedConfirm(){
+    this.setData({visibleUpdatedConfirm : false})
+  },
+
+
   showConfirm(){
     this.setData({visibleConfirm : true})
   },
@@ -15,7 +41,6 @@ Page({
         description: content
       })
         .then(response =>{
-          console.log(response.response.data.resource)
           let todo = [response.response.data.resource]
           this.data.lists = todo.concat(this.data.lists)
           this.setData({lists : this.data.lists})

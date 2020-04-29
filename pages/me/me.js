@@ -14,14 +14,12 @@ Page({
   fetchTomatoes(){
     http.get('/tomatoes',{is_group : "yes"})
       .then(response => {
-        console.log(response)
         this.setData({ tomatoes: response.response.data.resources })
       })
   },
   fetchTodos(){
     http.get('/todos',{is_group : "yes"})
       .then(response => {
-        console.log(response.response.data.resources )
         this.setData({ todos: response.response.data.resources })
       })
   },

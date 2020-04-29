@@ -29,11 +29,6 @@ function monthFormat(date){
   var dateMonth = date.toString().substring(0,2)
   var dateDay = date.toString().substring(2,4)
 
-console.log('dateMonth')
-console.log(dateMonth)
-console.log('dateDay')
-console.log(dateDay)
-
   if (dateMonth[0] === "0") { dateMonth = dateMonth[1] }
   if (dateDay[0] === "0") { dateDay = dateDay[1] }
   return dateMonth + "月" + dateDay + "日"

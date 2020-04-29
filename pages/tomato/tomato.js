@@ -68,8 +68,7 @@ Page({
   onShow(){   //钩子
     this.startTimer()
     http.post('/tomatoes')
-      .then(response =>{
-        console.log(response)
+      .then( response =>{
         this.setData({tomato : response.response.data.resource})
       })
   },
